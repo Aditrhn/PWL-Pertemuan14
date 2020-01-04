@@ -8,11 +8,10 @@
     <title>Buku</title>
 
     <!-- Fonts -->
-    
+
 </head>
 
 <body class="container">
-
     @extends('master')
     @section('main_content')
     <table class="table">
@@ -27,17 +26,19 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>Algoritma</td>
-                <td>Ajik</td>
-                <td>Jogja penerbit</td>
-                <td>2019</td>
-                <td>
-                    <a href="update" class="btn btn-sm btn-success">update</a>
-                    <a href="#" class="btn btn-sm btn-danger">delete</a>
-                </td>
-            </tr>
+            @foreach($data as $key => $show)
+                <tr>
+                    <td>{{$key+1}}</td>
+                    <td>{{$show->title}}</td>
+                    <td>{{$show->pengarang}}</td>
+                    <td>{{$show->penerbit}}</td>
+                    <td>{{$show->tahun}}</td>
+                    <td>
+                        <a href="update" class="btn btn-sm btn-success">update</a>
+                        <a href="#" class="btn btn-sm btn-danger">delete</a>
+                    </td>
+                </tr>
+            @endforeach
         </tbody>
     </table>
     @stop

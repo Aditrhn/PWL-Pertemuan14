@@ -10,7 +10,6 @@ class BookController extends Controller
 {
     public function show(){
         $res = Book::get();
-        return $res;
-        //return view('welcome', ['data'=>$res]);
+        return view('welcome', ['data'=>$res]);
     }
 }
